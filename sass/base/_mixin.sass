@@ -1,0 +1,18 @@
+@mixin calc($property, $expression)
+	#{$property}: -moz-calc(#{$expression})
+	#{$property}: -webkit-calc(#{$expression})
+	#{$property}: calc(#{$expression})
+
+@mixin bg-style($position:null, $style:cover)
+	background-position: $position
+	background-repeat: no-repeat
+	+background-size($style)
+
+@mixin breakpoint($point)
+	@if $point == pad
+		@media only screen and (max-width: 768px)
+			@content
+	@if $point == mobile
+		@media only screen and (max-width: 480px)
+			@content
+	
