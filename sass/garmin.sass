@@ -10,15 +10,17 @@ header
 	+display-flex
 	justify-content: center
 	align-items: center
-
+	+breakpoint(mobile)
+		padding: 0 10px
 .avatar
-	flex-basis: auto
 	width: 80px
 	height: 80px
 	margin-right: 20px
 	background-image: url("../img/avatar.jpg")
 	+border-radius(50%)
 	+bg-style(top, cover)
+.desc
+	+calc('width', '100% - 80px')
 
 .grid-item
 	margin-bottom: 20px
